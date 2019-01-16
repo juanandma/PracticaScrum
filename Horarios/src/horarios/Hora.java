@@ -5,17 +5,15 @@
  */
 package horarios;
 
+import java.util.Date;
+
 /**
  *
  * @author JUANM
  */
-public class Horarios {
-
-    /**
-     * @param args the command line arguments
-     */
+public class Hora {
     
-    
-
+    private Date HInicio;
+    private Date HFin;
     
 }
