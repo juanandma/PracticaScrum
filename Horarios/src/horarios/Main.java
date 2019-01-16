@@ -5,7 +5,10 @@
  */
 package horarios;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Date;
+import javafx.util.converter.LocalDateTimeStringConverter;
 
 /**
  *
@@ -16,5 +19,31 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        Hora h1= new Hora(1);
+        Hora h2= new Hora(1);
+        Horarios hor= new Horarios();
+        
+        LocalTime inicio1 = LocalTime.of(10, 0);
+        
+        LocalTime fin1 = LocalTime.of(11, 0);
+
+        
+        LocalTime inicio2 = LocalTime.of(9, 0);
+
+        
+        LocalTime fin2 = LocalTime.of(9, 30);
+
+        
+        
+        h1.setHInicio(inicio1);
+        h1.setHFin(fin1);
+        
+        h2.setHInicio(inicio2);
+        h2.setHFin(fin2);
+        
+        
+        if(hor.coinciden(h1,h2)){
+            System.out.println("coinciden");
+        }else System.out.println("no");
     }
 }

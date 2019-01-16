@@ -6,6 +6,7 @@
 package horarios;
 
 import java.util.Date;
+import java.time.LocalTime;
 
 /**
  *
@@ -13,7 +14,40 @@ import java.util.Date;
  */
 public class Hora {
     
-    private Date HInicio;
-    private Date HFin;
+    private int Dia;
+    private LocalTime HInicio;
+    private LocalTime HFin;
+
+    public Hora(int Dia) {
+        this.Dia = Dia;
+    }
+
+    public int getDia() {
+        return Dia;
+    }
+
+    public void setDia(int Dia) {
+        this.Dia = Dia;
+    }
+
+    public LocalTime getHInicio() {
+        return HInicio;
+    }
+
+    public void setHInicio(LocalTime HInicio) {
+        this.HInicio = HInicio;
+    }
+
+    public LocalTime getHFin() {
+        return HFin;
+    }
+
+    public void setHFin(LocalTime HFin) {
+        this.HFin = HFin;
+    }
+
+    
+
+    
     
 }
