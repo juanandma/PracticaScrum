@@ -14,7 +14,7 @@ import java.time.LocalTime;
  */
 public class Hora {
     
-    private int Dia;
+    private int Dia; //DIAS DE LA SEMANA (1=LUNES,...,5=VIERNES)
     private LocalTime HInicio;
     private LocalTime HFin;
 
