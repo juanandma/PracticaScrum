@@ -30,6 +30,7 @@ public class Main {
         Hora h1= new Hora(1);
         Hora h2= new Hora(1);
         Horarios hor= new Horarios();
+        //prueba
         
         LocalTime inicio1 = LocalTime.of(10, 0);
         
