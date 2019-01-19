@@ -57,8 +57,8 @@ public class Main {
         List<Hora> ho1= new ArrayList<Hora>();
         ho1.add(h1);
         ho1.add(h2);
-        Asignatura a1 = new Asignatura("Matematicas", 1, 3, 2, ho1);
-        Asignatura a2 = new Asignatura("Economia", 2, 4, 3, ho1);
+        Asignatura a1 = new Asignatura("Matematicas", 1, 3, 2, 1);
+        Asignatura a2 = new Asignatura("Economia", 2, 4, 3, 1);
         asignaturas.add(a1);
         asignaturas.add(a2);
         Horarios horario = new Horarios();
