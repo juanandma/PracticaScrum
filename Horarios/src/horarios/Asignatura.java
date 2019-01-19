@@ -18,64 +18,80 @@ public class Asignatura {
     private int ID;
     private int ngrupos;
     private int ndias;
-    private List<Hora> horario;
+    private List<Hora> horarioTeoria;
+    private List<Hora> horarioPractica;
+    private int cuatrimestre;
 
-    public Asignatura(String Nombre, int ID, int ngrupos, int ndias, List<Hora> horario) {
+    public Asignatura(String Nombre, int ID, int ngrupos, int ndias, int cuatrimestre) {
         this.Nombre = Nombre;
         this.ID = ID;
         this.ngrupos = ngrupos;
         this.ndias = ndias;
-        this.horario = horario;
+        this.cuatrimestre = cuatrimestre;
     }
 
+    
+    
     Asignatura() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
-    
-    
-
     public String getNombre() {
         return Nombre;
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    public int getNgrupos() {
-        return ngrupos;
-    }
-
-    public int getNdias() {
-        return ndias;
-    }
-
-    public List<Hora> getHorario() {
-        return horario;
     }
 
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
 
+    public int getID() {
+        return ID;
+    }
+
     public void setID(int ID) {
         this.ID = ID;
+    }
+
+    public int getNgrupos() {
+        return ngrupos;
     }
 
     public void setNgrupos(int ngrupos) {
         this.ngrupos = ngrupos;
     }
 
+    public int getNdias() {
+        return ndias;
+    }
+
     public void setNdias(int ndias) {
         this.ndias = ndias;
     }
 
-    public void setHorario(List<Hora> horario) {
-        this.horario = horario;
+    public List<Hora> getHorarioTeoria() {
+        return horarioTeoria;
     }
+
+    public void setHorarioTeoria(List<Hora> horarioTeoria) {
+        this.horarioTeoria = horarioTeoria;
+    }
+
+    public List<Hora> getHorarioPractica() {
+        return horarioPractica;
+    }
+
+    public void setHorarioPractica(List<Hora> horarioPractica) {
+        this.horarioPractica = horarioPractica;
+    }
+
+    public int getCuatrimestre() {
+        return cuatrimestre;
+    }
+
+    public void setCuatrimestre(int cuatrimestre) {
+        this.cuatrimestre = cuatrimestre;
+    }
+
     
-    
-    
+
 }

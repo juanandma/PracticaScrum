@@ -18,11 +18,14 @@ public class Horarios {
 
 
     /**
+     * @param h1
+     * @param h2
      * @param args the command line arguments
+     * @return 
      */
     
     
-    public boolean coinciden(Hora h1, Hora h2) {
+    public boolean coincidenHoras(Hora h1, Hora h2) {
 
         boolean coincide = false;
         
@@ -40,6 +43,13 @@ public class Horarios {
             
         }
 
+        return coincide;
+    }
+    
+    public boolean coincidenAsignaturas(List<Asignatura> asignaturas){
+        
+        boolean coindice=false;
+        
         return coincide;
     }
 

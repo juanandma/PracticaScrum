@@ -68,7 +68,7 @@ public class Main {
         
         
         
-        if(hor.coinciden(h1,h2)){
+        if(hor.coincidenHoras(h1,h2)){
             System.out.println("coinciden");
         }else System.out.println("no");
     }
