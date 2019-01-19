@@ -7,7 +7,9 @@ package horarios;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javafx.util.converter.LocalDateTimeStringConverter;
 
 /**
@@ -49,6 +51,21 @@ public class Main {
         
         h2.setHInicio(inicio2);
         h2.setHFin(fin2);
+        
+        // Prueba VerAsignaturas
+        List<Asignatura> asignaturas = new ArrayList<Asignatura>();
+        List<Hora> ho1= new ArrayList<Hora>();
+        ho1.add(h1);
+        ho1.add(h2);
+        Asignatura a1 = new Asignatura("Matematicas", 1, 3, 2, ho1);
+        Asignatura a2 = new Asignatura("Economia", 2, 4, 3, ho1);
+        asignaturas.add(a1);
+        asignaturas.add(a2);
+        Horarios horario = new Horarios();
+        horario.VerAsignaturas(asignaturas);
+        ///////////////////////////////////////////////////////////////////
+        
+        
         
         
         if(hor.coinciden(h1,h2)){

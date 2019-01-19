@@ -7,6 +7,8 @@ package horarios;
 
 import java.time.LocalTime;
 import java.util.Date;
+import java.util.List;
+import horarios.*;
 
 /**
  *
@@ -41,5 +43,16 @@ public class Horarios {
         return coincide;
     }
 
+    
+    public void VerAsignaturas(List<Asignatura> asignaturas)
+    {
+        for (int i = 0; i < asignaturas.size(); i++) {
+            System.out.println("Asignatura " + asignaturas.get(i).getNombre() + " con id " + asignaturas.get(i).getID() + " con " 
+                    + asignaturas.get(i).getNgrupos() + " grupos, se imparte el dia " + asignaturas.get(i).getNdias() + " con " 
+                    + asignaturas.get(i).getNgrupos() + " grupos");
+     
+        }
+        
+    }
 
 }
