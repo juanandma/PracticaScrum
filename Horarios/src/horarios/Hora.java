@@ -5,7 +5,6 @@
  */
 package horarios;
 
-import java.util.Date;
 import java.time.LocalTime;
 
 /**

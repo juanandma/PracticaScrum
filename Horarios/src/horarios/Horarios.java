@@ -96,6 +96,35 @@ public class Horarios {
 
         return coincide;
     }
+    
+    public boolean coincidenAsignaturasPracticas(Asignatura a1, Asignatura a2){
+        
+        boolean coincide = true;
+        int i, j;
+        i = j = 0;
+        int n1, n2;
+
+        if (a1.getCuatrimestre() == a2.getCuatrimestre()) {
+
+            List<Hora> practicas_1 = a1.getHorarioPractica();
+            List<Hora> practicas_2 = a2.getHorarioPractica();
+
+            n1 = practicas_1.size();
+            n2 = practicas_2.size();
+
+            while (i < n1 && coincide) {
+                while (j < n2 && coincide) {
+
+                    coincide=coincidenHoras(practicas_1.get(i), practicas_2.get(j));
+
+                    j++;
+                }
+                i++;
+            }
+        }
+        
+        return coincide;
+    }
 
     public void VerAsignaturas(List<Asignatura> asignaturas) {
         for (int i = 0; i < asignaturas.size(); i++) {
