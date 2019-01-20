@@ -6,9 +6,10 @@
 package horarios;
 
 import java.time.LocalTime;
-import java.util.Date;
 import java.util.List;
 import horarios.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  *
@@ -123,6 +124,27 @@ public class Horarios {
             }
         }
         
+        return coincide;
+    }
+    
+    public boolean coincideHorarioPracticas(List<Asignatura> asignaturas) {
+
+        boolean coincide = false;
+
+        int i,j;
+        i=j=0;
+        
+        int n = asignaturas.size();
+        
+        while (i < n && !coincide) {            
+            while (j < n && !coincide){
+                
+                coincide=coincidenAsignaturasPracticas(asignaturas.get(i), asignaturas.get(j));
+                j++;
+            }
+            i++;
+        }
+
         return coincide;
     }
 
