@@ -22,14 +22,22 @@ public class Asignatura {
     private List<Hora> horarioPractica;
     private int cuatrimestre;
 
-    public Asignatura(String Nombre, int ID, int ngrupos, int ndias, int cuatrimestre) {
+    public Asignatura(String Nombre, int ID, int ngrupos, int ndias, int cuatrimestre, List<Hora> horarioTeoria, List<Hora> horarioPractica ) {
+        this.Nombre = Nombre;
+        this.ID = ID;
+        this.ngrupos = ngrupos;
+        this.ndias = ndias;
+        this.cuatrimestre = cuatrimestre;
+        this.horarioTeoria = horarioTeoria;
+        this.horarioPractica = horarioPractica;
+    }
+ public Asignatura(String Nombre, int ID, int ngrupos, int ndias, int cuatrimestre) {
         this.Nombre = Nombre;
         this.ID = ID;
         this.ngrupos = ngrupos;
         this.ndias = ndias;
         this.cuatrimestre = cuatrimestre;
     }
-
     
     
     Asignatura() {

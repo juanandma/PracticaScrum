@@ -8,8 +8,10 @@ package horarios;
 import java.time.LocalTime;
 import java.util.List;
 import horarios.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 
 /**
  *
@@ -23,6 +25,9 @@ public class Horarios {
      * @param args the command line arguments
      * @return
      */
+    
+    private ArrayList<Asignatura> asignaturas = new ArrayList<Asignatura>();
+    
     
     
     //Las busquedas son todas exhaustivas (malo)
@@ -157,5 +162,58 @@ public class Horarios {
         }
 
     }
+    
+    public void InsertarAsignatura()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduzca el nombre de la asignatura: ");
+        String nom = sc.next();
+        System.out.println("Introduzca el ID de la asignatura: ");
+        int id = sc.nextInt();
+        System.out.println("Introduzca el numero de grupos de la asignatura: ");
+        int ng = sc.nextInt();
+        System.out.println("Introduzca el numero de dias que se impaarte la asignatura: ");
+        int nd = sc.nextInt();
+        System.out.println("Introduzca el cuatrimestre de la asignatura: ");
+        int c = sc.nextInt();
+        
+        List<Hora> horarioTeoria = null; // FALTAN POR PEDIR LAS HORAS !!!!!!!!!!!!!!!!!!!!!!
+        List<Hora> horarioPractica = null;
+        
+        Asignatura a = new Asignatura(nom, id, ng, nd, c, horarioTeoria, horarioPractica);
+        asignaturas.add(a);
+        
+    }
+    
+        public void BorrarAsignatura()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduzca el nombre de la asignatura a eliminar: ");
+        String nom = sc.next();
+        System.out.println("Introduzca el ID de la asignatura a eliminar: ");
+        int id = sc.nextInt();
+       
+        for (int i = 0; i <= asignaturas.size(); i++) {
+            if((asignaturas.get(i).getNombre().equals(nom))  && (asignaturas.get(i).getID() == id))
+            {
+                asignaturas.remove(i);
+            }
+                   
+        }
+        
+    }
+    
+    /*
+    private String Nombre;
+    private int ID;
+    private int ngrupos;
+    private int ndias;
+    private List<Hora> horarioTeoria;
+    private List<Hora> horarioPractica;
+    private int cuatrimestre;
+    
+    
+    
+    */
 
 }
