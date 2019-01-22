@@ -31,7 +31,7 @@ public class Horarios {
     
     
     //Las busquedas son todas exhaustivas (malo)
-    public boolean coincidenHoras(Hora h1, Hora h2) {
+    private boolean coincidenHoras(Hora h1, Hora h2) {
 
         boolean coincide = false;
 
@@ -47,7 +47,7 @@ public class Horarios {
         return coincide;
     }
 
-    public boolean coincidenAsignaturasTeoria(Asignatura a1, Asignatura a2) {
+    private boolean coincidenAsignaturasTeoria(Asignatura a1, Asignatura a2) {
 
         boolean coincide = false;
         int i, j;
@@ -103,7 +103,7 @@ public class Horarios {
         return coincide;
     }
     
-    public boolean coincidenAsignaturasPracticas(Asignatura a1, Asignatura a2){
+    private boolean coincidenAsignaturasPracticas(Asignatura a1, Asignatura a2){
         
         boolean coincide = true;
         int i, j;
