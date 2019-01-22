@@ -102,7 +102,7 @@ public class Main {
                 System.out.println("Introduce el ID de la asignatura que quiere en su Horario: ");
                 id = input.nextInt();
 
-                if (id != 0) {
+                if (id > 0 && id < asignaturas.size() + 1) {
                     mis_clases.add(asignaturas.get(id - 1));
                 }
 
