@@ -176,11 +176,13 @@ public class Horarios {
         int nd = sc.nextInt();
         System.out.println("Introduzca el cuatrimestre de la asignatura: ");
         int c = sc.nextInt();
+        System.out.println("Introduzca el curso de la asignatura: ");
+        int cu = sc.nextInt();
         
         List<Hora> horarioTeoria = null; // FALTAN POR PEDIR LAS HORAS !!!!!!!!!!!!!!!!!!!!!!
         List<Hora> horarioPractica = null;
         
-        Asignatura a = new Asignatura(nom, id, ng, nd, c, horarioTeoria, horarioPractica);
+        Asignatura a = new Asignatura(nom, id, ng, nd, c, cu, horarioTeoria, horarioPractica);
         asignaturas.add(a);
         
     }

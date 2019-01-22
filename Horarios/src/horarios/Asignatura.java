@@ -21,8 +21,9 @@ public class Asignatura {
     private List<Hora> horarioTeoria;
     private List<Hora> horarioPractica;
     private int cuatrimestre;
+    private int curso;
 
-    public Asignatura(String Nombre, int ID, int ngrupos, int ndias, int cuatrimestre, List<Hora> horarioTeoria, List<Hora> horarioPractica ) {
+    public Asignatura(String Nombre, int ID, int ngrupos, int ndias, int cuatrimestre, int curso, List<Hora> horarioTeoria, List<Hora> horarioPractica ) {
         this.Nombre = Nombre;
         this.ID = ID;
         this.ngrupos = ngrupos;
@@ -30,6 +31,7 @@ public class Asignatura {
         this.cuatrimestre = cuatrimestre;
         this.horarioTeoria = horarioTeoria;
         this.horarioPractica = horarioPractica;
+        this.curso=curso;
     }
  public Asignatura(String Nombre, int ID, int ngrupos, int ndias, int cuatrimestre) {
         this.Nombre = Nombre;

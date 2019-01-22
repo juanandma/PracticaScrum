@@ -7,7 +7,7 @@ package horarios;
 
 /**
  *
- * @author JUANM
+ * @author JAVIER TUR GARCÍA
  */
 public class Fichero {
     //hdfsdfjhgf
