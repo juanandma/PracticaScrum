@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import horarios.Horarios;
 
 /**
  *
@@ -19,6 +20,12 @@ import java.util.List;
  */
 public class Fichero {
 
+    private static int id_asig;
+
+    public Fichero() {
+        this.id_asig=0;
+    }
+    
     /**
      * 
      * @param rutaFichero ruta del fichero de asignaturas que queremos leer
@@ -89,6 +96,7 @@ public class Fichero {
                     lista_hora_teoria.add(h);
                 }
                 a.setHorarioTeoria(lista_hora_teoria);
+                a.setNgrupos(numHorariosTeoria);
 
                 cadena = b.readLine(); //leemos horarios prácticas
                 aux = cadena.split(" ");
@@ -117,6 +125,8 @@ public class Fichero {
                     lista_hora_practicas.add(h);
                 }
                 a.setHorarioPractica(lista_hora_practicas);
+                id_asig++;
+                a.setID(id_asig);
             }
             asignaturas.add(a); //añadimos asignatura a la lista
         }
@@ -124,7 +134,15 @@ public class Fichero {
     }
 
     public static void main(String[] args) throws IOException {
-        leerFichero("horario4.txt");
+        List<Asignatura> asigs1=new ArrayList<>();
+        List<Asignatura> asigs2=new ArrayList<>();
+        asigs1=leerFichero("horario4.txt");
+        asigs2=leerFichero("horario2.txt");
+        for(int i=0;i<asigs2.size();i++){
+            asigs1.add(asigs2.get(i)); 
+        }
+        Horarios h1 = new Horarios();
+        h1.VerAsignaturas(asigs1);
     }
 
 }
