@@ -65,15 +65,12 @@ public class Horarios {
             while (i < n1 && !coincide) {
                 while (j < n2 && !coincide) {
 
-                    if (i != j) {
+                    int dia1 = clases_1.get(i).getDia();
+                    int dia2 = clases_2.get(j).getDia();
 
-                        int dia1 = clases_1.get(i).getDia();
-                        int dia2 = clases_2.get(j).getDia();
+                    if (dia1 == dia2) {
 
-                        if (dia1 == dia2) {
-
-                            coincide = coincidenHoras(clases_1.get(i), clases_1.get(j));
-                        }
+                        coincide = coincidenHoras(clases_1.get(i), clases_1.get(j));
                     }
 
                     j++;
@@ -131,14 +128,13 @@ public class Horarios {
             while (i < n1 && coincide) {
                 while (j < n2 && coincide) {
 
-                    if (i != j) {
+                    int dia1 = practicas_1.get(i).getDia();
+                    int dia2 = practicas_2.get(j).getDia();
 
-                        int dia1 = practicas_1.get(i).getDia();
-                        int dia2 = practicas_2.get(j).getDia();
-
-                        if (dia1 == dia2) {
-                            coincide = coincidenHoras(practicas_1.get(i), practicas_2.get(j));
-                        }
+                    if (dia1 == dia2) {
+                        coincide = coincidenHoras(practicas_1.get(i), practicas_2.get(j));
+                    }else{
+                        coincide=false;
                     }
 
                     j++;
@@ -146,9 +142,7 @@ public class Horarios {
                 i++;
             }
 
-            if (coincide) {
-                System.out.println("Coinciden: " + a1.getNombre() + " y " + a2.getNombre());
-            }
+
         }
 
         return coincide;
