@@ -156,7 +156,7 @@ public class Horarios {
     public void VerAsignaturas(List<Asignatura> asignaturas) {
         for (int i = 0; i < asignaturas.size(); i++) {
             System.out.println("Asignatura " + asignaturas.get(i).getNombre() + " con id " + asignaturas.get(i).getID() + " con "
-                    + asignaturas.get(i).getNgrupos() + " grupos, se imparte el dia " + asignaturas.get(i).getNdias() + " con "
+                    + asignaturas.get(i).getNgrupos() + " grupos, "/*se imparte el dia " + asignaturas.get(i).getNdias() */+ " con "
                     + asignaturas.get(i).getNgrupos() + " grupos");
 
         }
@@ -182,7 +182,7 @@ public class Horarios {
         List<Hora> horarioTeoria = null; // FALTAN POR PEDIR LAS HORAS !!!!!!!!!!!!!!!!!!!!!!
         List<Hora> horarioPractica = null;
         
-        Asignatura a = new Asignatura(nom, id, ng, nd, c, cu, horarioTeoria, horarioPractica);
+        Asignatura a = new Asignatura(nom, id, ng, c, cu, horarioTeoria, horarioPractica);
         asignaturas.add(a);
         
     }
