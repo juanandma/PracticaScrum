@@ -1,0 +1,27 @@
+curso 1
+cuatrimestre 1
+nombre matematicas1
+horarios_teoria 2
+4 10:00:00 11:30:00 5 08:30:00 10:00:00
+4 17:30:00 19:00:00 5 17:30:00 19:00:00 
+horarios_practicas 0
+nombre fisica
+horarios_teoria 2
+3 10:00:00 11:30:00 4 08:30:00 10:00:00
+2 16:00:00 17:30:00 5 16:00:00 17:30:00
+horarios_practicas 0
+nombre Fundamento_de_Computadores
+horarios_teoria 2
+3 08:30:00 10:00:00 5 10:00:00 11:30:00
+1 17:30:00 19:00:00 3 16:00:00 17:30:00
+horarios_practicas 0
+nombre Fundamento_de_Programacion
+horarios_teoria 2
+1 10:00:00 11:00:00 2 08:30:00 09:30:00
+4 19:00:00 21:00:00
+horarios_practicas 0
+nombre Economia
+horarios_teoria 2
+1 08:30:00 10:00:00 2 09:30:00 11:00:00
+1 15:30:00 17:30:00 2 17:30:00 19:00:00
+horarios_practicas 0
