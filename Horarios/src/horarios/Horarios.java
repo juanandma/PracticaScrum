@@ -70,7 +70,7 @@ public class Horarios {
 
                     if (dia1 == dia2) {
 
-                        coincide = coincidenHoras(clases_1.get(i), clases_1.get(j));
+                        coincide = coincidenHoras(clases_1.get(i), clases_2.get(j));
                     }
 
                     j++;
@@ -125,6 +125,10 @@ public class Horarios {
             n1 = practicas_1.size();
             n2 = practicas_2.size();
 
+            if (n1 == 0 || n2 == 0) {
+                coincide = false;
+            }
+
             while (i < n1 && coincide) {
                 while (j < n2 && coincide) {
 
@@ -133,8 +137,8 @@ public class Horarios {
 
                     if (dia1 == dia2) {
                         coincide = coincidenHoras(practicas_1.get(i), practicas_2.get(j));
-                    }else{
-                        coincide=false;
+                    } else {
+                        coincide = false;
                     }
 
                     j++;
@@ -142,7 +146,12 @@ public class Horarios {
                 i++;
             }
 
+            if (coincide) {
+                System.out.println("Coinciden: " + a1.getNombre() + " y " + a2.getNombre());
+            }
 
+        } else {
+            coincide = false;
         }
 
         return coincide;
