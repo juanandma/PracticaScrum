@@ -40,11 +40,11 @@ public class Asignatura {
         this.ndias = ndias;
         this.cuatrimestre = cuatrimestre;
     }
-    
-    
+
     Asignatura() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //no hace nada
     }
+    
 
     public String getNombre() {
         return Nombre;
@@ -101,6 +101,16 @@ public class Asignatura {
     public void setCuatrimestre(int cuatrimestre) {
         this.cuatrimestre = cuatrimestre;
     }
+
+    public int getCurso() {
+        return curso;
+    }
+
+    public void setCurso(int curso) {
+        this.curso = curso;
+    }
+    
+    
 
     
 

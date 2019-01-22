@@ -29,8 +29,10 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Hora h1= new Hora(1);
-        Hora h2= new Hora(1);
+        Hora h1= new Hora();
+        Hora h2= new Hora();
+        h1.setDia(1);
+        h2.setDia(1);
         Horarios hor= new Horarios();
         //prueba
         

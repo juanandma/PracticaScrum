@@ -1,0 +1,27 @@
+curso 4
+cuatrimestre 1
+nombre DAW
+horarios_teoria 1
+1 08:30:00 10:30:00
+horarios_practicas 1
+3 17:00:00 19:00:00
+nombre Motores_Busqueda
+horarios_teoria 1
+4 10:30:00 11:30:00 5 10:30:00 11:30:00
+horarios_practicas 1
+1 13:00:00 15:00:00
+nombre Mineria_Datos
+horarios_teoria 1
+5 08:30:00 10:30:00
+horarios_practicas 1
+2 17:00:00 19:00:00
+nombre CMEPPS
+horarios_teoria 1
+5 13:00:00 15:00:00
+horarios_practicas 1
+4 19:00:00 21:00:00
+nombre Integracion
+horarios_teoria 1
+4 13:00:00 15:00:00
+horarios_practicas 1
+4 17:00:00 19:00:00
