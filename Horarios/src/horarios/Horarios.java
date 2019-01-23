@@ -182,10 +182,42 @@ public class Horarios {
     }
 
     public void VerAsignaturas(List<Asignatura> asignaturas) {
+        System.out.println("---- LISTA DE ASIGNATURAS ---");
+        String dia;
         for (int i = 0; i < asignaturas.size(); i++) {
-            System.out.println("Asignatura " + asignaturas.get(i).getNombre() + " con id " + asignaturas.get(i).getID() + " con "
-                    + asignaturas.get(i).getNgrupos() + " grupos, "/*se imparte el dia " + asignaturas.get(i).getNdias() */ + " con "
-                    + asignaturas.get(i).getNgrupos() + " grupos");
+            System.out.println("Nombre: " + asignaturas.get(i).getNombre() + "\nID: " + asignaturas.get(i).getID());
+            System.out.println("Curso: " + asignaturas.get(i).getCurso() + "\nCuatrimestre: " + asignaturas.get(i).getCuatrimestre());
+            System.out.println("Horario de teoría:");
+            for (int j = 0; j < asignaturas.get(i).getHorarioTeoria().size(); j++) {
+                if (asignaturas.get(i).getHorarioTeoria().get(j).getDia() == 1) {
+                    dia = "Lunes";
+                } else if (asignaturas.get(i).getHorarioTeoria().get(j).getDia() == 2) {
+                    dia = "Martes";
+                } else if (asignaturas.get(i).getHorarioTeoria().get(j).getDia() == 3) {
+                    dia = "Miércoles";
+                } else if (asignaturas.get(i).getHorarioTeoria().get(j).getDia() == 4) {
+                    dia = "Jueves";
+                } else {
+                    dia = "Viernes";
+                }
+                System.out.println(dia + " de " + asignaturas.get(i).getHorarioTeoria().get(j).getHInicio() + " a " + asignaturas.get(i).getHorarioTeoria().get(j).getHFin());
+            }
+            System.out.println("Horario de prácticas:");
+            for (int j = 0; j < asignaturas.get(i).getHorarioPractica().size(); j++) {
+                if (asignaturas.get(i).getHorarioPractica().get(j).getDia() == 1) {
+                    dia = "Lunes";
+                } else if (asignaturas.get(i).getHorarioPractica().get(j).getDia() == 2) {
+                    dia = "Martes";
+                } else if (asignaturas.get(i).getHorarioPractica().get(j).getDia() == 3) {
+                    dia = "Miércoles";
+                } else if (asignaturas.get(i).getHorarioPractica().get(j).getDia() == 4) {
+                    dia = "Jueves";
+                } else {
+                    dia = "Viernes";
+                }
+                System.out.println(dia + " de " + asignaturas.get(i).getHorarioPractica().get(j).getHInicio() + " a " + asignaturas.get(i).getHorarioPractica().get(j).getHFin());
+            }
+            System.out.println("-------------------");
 
         }
 
