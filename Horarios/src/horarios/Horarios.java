@@ -311,14 +311,22 @@ public class Horarios {
     }
 
     public void ModificarAsignatura() {
+        
         Scanner sc = new Scanner(System.in);
+        
         System.out.println("Introduzca el ID de la asignatura a modificar: ");
+        int i=0;
+        boolean encontrado=false;
         int id = sc.nextInt();
 
         List<Hora> horarioteo = new ArrayList<Hora>();
 
-        for (int i = 0; i <= asignaturas.size(); i++) {
+        while(i<asignaturas.size() && !encontrado) {
+            
             if (asignaturas.get(i).getID() == id) {
+                
+                encontrado=true;
+                
                 System.out.println("Introduzca el nuevo nombre de la asignatura: curso y horario ");
                 String nom = sc.next();
                 System.out.println("Introduzca el curso en el que se impartira la asignatura: ");
@@ -337,6 +345,12 @@ public class Horarios {
                 asignaturas.get(i).setCurso(c);
                 asignaturas.get(i).setHorarioTeoria(horarioteo);
 
+            }else{
+                i++;
+            }
+            
+            if(!encontrado){
+                System.out.println("No se encontró");
             }
 
         }

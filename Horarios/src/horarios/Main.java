@@ -87,41 +87,77 @@ public class Main {
 
         List<Asignatura> mis_clases = new ArrayList<>();
 
-        int id;
+        int id, salir;
 
         try {
 
-            asignaturas = fich.leerFichero("horario1.txt");
+            asignaturas = fich.leerFichero("horario4.txt");
             asignaturas.addAll(fich.leerFichero("horario2.txt"));
-            asignaturas.addAll(fich.leerFichero("horario4.txt"));
+            asignaturas.addAll(fich.leerFichero("horario1.txt"));
 
             horario.VerAsignaturas(asignaturas);
 
             do {
-                System.out.println("        *** " + '"' + "0" + '"' + " para terminar");
-                System.out.println("Introduce el ID de la asignatura que quiere en su Horario: ");
-                id = input.nextInt();
 
-                if (id > 0 && id < asignaturas.size() + 1) {
-                    mis_clases.add(asignaturas.get(id - 1));
+                System.out.println("\t1. Insertar Asignatura");
+                System.out.println("\t2. Modificar asignatura");
+                System.out.println("\t3. Borrar Asignatura");
+                System.out.println("\t4. Comprobar horario");
+                System.out.println("\t0. Salir");
+
+                salir = input.nextInt();
+
+                switch (salir) {
+                    case 1: {
+                        horario.InsertarAsignatura();
+
+                    }
+                    break;
+
+                    case 2: {
+                        horario.ModificarAsignatura();
+
+                    }
+                    break;
+
+                    case 3: {
+                        horario.BorrarAsignatura();
+
+                    }
+                    break;
+
+                    case 4: {
+                        do {
+                            System.out.println("        *** " + '"' + "0" + '"' + " para terminar");
+                            System.out.println("Introduce el ID de la asignatura que quiere en su Horario: ");
+                            id = input.nextInt();
+
+                            if (id > 0 && id < asignaturas.size() + 1) {
+                                mis_clases.add(asignaturas.get(id - 1));
+                            }
+
+                        } while (id != 0);
+
+                        horario.VerAsignaturas(mis_clases);
+                        if (horario.coincideHorarioTeoria(mis_clases)) {
+                            System.out.println("Coincide su horario de teoría");
+
+                        } else {
+
+                            if (horario.coincideHorarioPracticas(mis_clases)) {
+                                System.out.println("Coincide su horario de práticas");
+
+                            } else {
+                                System.out.println("No coincide ninguna asignatura");
+
+                            }
+                        }
+                    }
+                    break;
+
                 }
 
-            } while (id != 0);
-
-            horario.VerAsignaturas(mis_clases);
-            if (horario.coincideHorarioTeoria(mis_clases)) {
-                System.out.println("Coincide su horario de teoría");
-
-            } else {
-
-                if (horario.coincideHorarioPracticas(mis_clases)) {
-                    System.out.println("Coincide su horario de práticas");
-
-                } else {
-                    System.out.println("No coincide ninguna asignatura");
-
-                }
-            }
+            } while (salir != 0);
 
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
