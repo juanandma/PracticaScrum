@@ -315,13 +315,13 @@ public class Horarios {
         Scanner sc = new Scanner(System.in);
         
         System.out.println("Introduzca el ID de la asignatura a modificar: ");
-        int i=0;
+        int i=1;
         boolean encontrado=false;
         int id = sc.nextInt();
 
         List<Hora> horarioteo = new ArrayList<Hora>();
 
-        while(i<asignaturas.size() && !encontrado) {
+        while(i<=asignaturas.size() && !encontrado) {
             
             if (asignaturas.get(i).getID() == id) {
                 
