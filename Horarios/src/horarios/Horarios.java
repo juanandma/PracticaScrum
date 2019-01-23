@@ -357,11 +357,6 @@ public class Horarios {
             } else {
                 i++;
             }
-
-            if (!encontrado) {
-                System.out.println("No se encontró");
-            }
-
         }
 
     }
