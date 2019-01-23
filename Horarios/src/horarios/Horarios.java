@@ -230,16 +230,37 @@ public class Horarios {
 
     }
 
-    /*
-    private String Nombre;
-    private int ID;
-    private int ngrupos;
-    private int ndias;
-    private List<Hora> horarioTeoria;
-    private List<Hora> horarioPractica;
-    private int cuatrimestre;
-    
-    
-    
-     */
+    public void ModificarAsignatura() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduzca el ID de la asignatura a modificar: ");
+        int id = sc.nextInt();
+
+        List<Hora> horarioteo = new ArrayList<Hora>();
+
+        for (int i = 0; i <= asignaturas.size(); i++) {
+            if (asignaturas.get(i).getID() == id) {
+                System.out.println("Introduzca el nuevo nombre de la asignatura: curso y horario ");
+                String nom = sc.next();
+                System.out.println("Introduzca el curso en el que se impartira la asignatura: ");
+                int c = sc.nextInt();
+
+                System.out.println("Introduzca horario en el que comienza la teoria: ");
+                String h = sc.next();
+                Hora ho = new Hora();
+                ho.setHInicio(LocalTime.parse(h));
+                System.out.println("Introduzca horario en el que finaliza la teoria: ");
+                String h2 = sc.next();
+                ho.setHFin(LocalTime.parse(h2));
+                horarioteo.add(ho);
+
+                asignaturas.get(i).setNombre(nom);
+                asignaturas.get(i).setCurso(c);
+                asignaturas.get(i).setHorarioTeoria(horarioteo);
+
+            }
+
+        }
+
+    }
+
 }
