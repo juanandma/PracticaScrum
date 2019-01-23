@@ -25,7 +25,7 @@ public class Horarios {
      * @param args the command line arguments
      * @return
      */
-    private ArrayList<Asignatura> asignaturas = new ArrayList<Asignatura>();
+   // private ArrayList<Asignatura> asignaturas = new ArrayList<Asignatura>();
 
     //Las busquedas son todas exhaustivas (malo)
     private boolean coincidenHoras(Hora h1, Hora h2) {
@@ -268,7 +268,7 @@ public class Horarios {
 
     }
 
-    public void InsertarAsignatura() {
+    public void InsertarAsignatura(List<Asignatura> asignaturas) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduzca el nombre de la asignatura: ");
         String nom = sc.nextLine();
@@ -303,7 +303,7 @@ public class Horarios {
 
     }
 
-    public void BorrarAsignatura() {
+    public void BorrarAsignatura(List<Asignatura> asignaturas) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduzca el nombre de la asignatura a eliminar: ");
         String nom = sc.next();
@@ -319,7 +319,7 @@ public class Horarios {
 
     }
 
-    public void ModificarAsignatura() {
+    public void ModificarAsignatura(List<Asignatura> asignaturas) {
 
         Scanner sc = new Scanner(System.in);
 
@@ -336,7 +336,7 @@ public class Horarios {
 
                 encontrado = true;
 
-                System.out.println("Introduzca el nuevo nombre de la asignatura: curso y horario ");
+                System.out.println("Introduzca el nuevo nombre de la asignatura: ");
                 String nom = sc.next();
                 System.out.println("Introduzca el curso en el que se impartira la asignatura: ");
                 int c = sc.nextInt();

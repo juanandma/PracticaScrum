@@ -109,19 +109,20 @@ public class Main {
 
                 switch (salir) {
                     case 1: {
-                        horario.InsertarAsignatura();
-
+                        horario.InsertarAsignatura(asignaturas);
+                        horario.VerAsignaturas(asignaturas);
                     }
                     break;
 
                     case 2: {
-                        horario.ModificarAsignatura();
-
+                        horario.ModificarAsignatura(asignaturas);
+                        horario.VerAsignaturas(asignaturas);
                     }
                     break;
 
                     case 3: {
-                        horario.BorrarAsignatura();
+                        horario.BorrarAsignatura(asignaturas);
+                        horario.VerAsignaturas(asignaturas);
 
                     }
                     break;
