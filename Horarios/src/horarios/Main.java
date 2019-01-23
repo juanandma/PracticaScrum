@@ -145,13 +145,13 @@ public class Main {
 
                         } else {
 
-                            if (horario.coincideHorarioPracticas(mis_clases)) {
+                            /*if (horario.coincideHorarioPracticas(mis_clases)) {
                                 System.out.println("Coincide su horario de práticas");
 
-                            } else {
+                            } else {*/
                                 System.out.println("No coincide ninguna asignatura");
 
-                            }
+                            //}
                         }
                     }
                     break;

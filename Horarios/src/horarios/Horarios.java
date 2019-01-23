@@ -110,9 +110,8 @@ public class Horarios {
         return coincide;
     }
 
-    // Compara tanto el horario de prácticas
-    //de 2 asignaturas en busca de prácticas que coincidan a la misma hora
-    private boolean coincidenAsignaturasPracticas(Asignatura a1, Asignatura a2) {
+
+    /*private boolean coincidenAsignaturasPracticas(Asignatura a1, Asignatura a2) {
 
         boolean coincide = true;
         int i, j;
@@ -224,7 +223,7 @@ public class Horarios {
         }
 
         return coincide;
-    }
+    }*/
 
     public void VerAsignaturas(List<Asignatura> asignaturas) {
         System.out.println("---- LISTA DE ASIGNATURAS ---");
