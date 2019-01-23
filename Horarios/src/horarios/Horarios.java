@@ -238,8 +238,25 @@ public class Horarios {
         System.out.println("Introduzca el curso de la asignatura: ");
         int cu = sc.nextInt();
 
-        List<Hora> horarioTeoria = null; // FALTAN POR PEDIR LAS HORAS !!!!!!!!!!!!!!!!!!!!!!
-        List<Hora> horarioPractica = null;
+        String masDias="s";
+        String diaSemana, horaInicio, horaFin;
+        List<Hora> horarioTeoria = new ArrayList<>(); 
+        List<Hora> horarioPractica = new ArrayList<>();
+        do{
+            Hora h1=new Hora();
+            System.out.println("Introduzca día de clase de la semana: (1-5)");
+            h1.setDia(Integer.parseInt(sc.nextLine()));
+            System.out.println("Introduzca hora de inicio: (HH:MM:SS)");
+            h1.setHInicio(LocalTime.parse(sc.nextLine()));
+            System.out.println("Introduzca hora de fin: (HH:MM:SS)");
+            h1.setHFin(LocalTime.parse(sc.nextLine()));
+            horarioTeoria.add(h1);
+            System.out.println("¿Desea introducir otro dia? (s/n)");
+            masDias=sc.nextLine();
+        }while(masDias=="s");
+        
+        //FALTA PEDIR HORARIO DE PRÁCTICAS
+        
 
         Asignatura a = new Asignatura(nom, id, ng, c, cu, horarioTeoria, horarioPractica);
         asignaturas.add(a);
