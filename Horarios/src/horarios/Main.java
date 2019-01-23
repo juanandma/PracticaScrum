@@ -91,9 +91,9 @@ public class Main {
 
         try {
 
-            asignaturas = fich.leerFichero("horario4.txt");
+            asignaturas = fich.leerFichero("horario1.txt");
             asignaturas.addAll(fich.leerFichero("horario2.txt"));
-            asignaturas.addAll(fich.leerFichero("horario1.txt"));
+            asignaturas.addAll(fich.leerFichero("horario4.txt"));
 
             horario.VerAsignaturas(asignaturas);
 

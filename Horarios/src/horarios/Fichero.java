@@ -84,18 +84,23 @@ public class Fichero {
                         h.setDia(diaSemana1);
                         h.setHInicio(hora_ini1);
                         h.setHFin(hora_fin1);
+                        
+                        lista_hora_teoria.add(h);
 
                         if (aux.length == 6) //horario teoría partido en dos dias
                         {
+                            h = new Hora();
                             diaSemana2 = Integer.parseInt(aux[3]);
                             hora_ini2 = LocalTime.parse(aux[4]);
                             hora_fin2 = LocalTime.parse(aux[5]);
 
-                            h.setDia2(diaSemana2);
-                            h.setHInicio2(hora_ini2);
-                            h.setHFin2(hora_fin2);
+                            h.setDia(diaSemana2);
+                            h.setHInicio(hora_ini2);
+                            h.setHFin(hora_fin2);
+                            
+                            lista_hora_teoria.add(h);
                         }
-                        lista_hora_teoria.add(h);
+                        
                     }
                     a.setHorarioTeoria(lista_hora_teoria);
                     a.setNgrupos(numHorariosTeoria);
