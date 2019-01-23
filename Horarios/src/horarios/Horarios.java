@@ -120,14 +120,12 @@ public class Horarios {
         int n1, n2;
 
         if (a1.getCuatrimestre() == a2.getCuatrimestre()) {
-            
+
             List<Hora> practicas_1 = a1.getHorarioPractica();
             List<Hora> practicas_2 = a2.getHorarioPractica();
 
             n1 = practicas_1.size();
             n2 = practicas_2.size();
-            
-
 
             if (n1 == 0 || n2 == 0) {
                 coincide = false;
@@ -160,48 +158,47 @@ public class Horarios {
 
         return coincide;
     }
-    
-    
-    private boolean coincidenAsignaturasTeoriaConPracticas(Asignatura a1, Asignatura a2){
-        
+
+    private boolean coincidenAsignaturasTeoriaConPracticas(Asignatura a1, Asignatura a2) {
+
         boolean coincide = true;
         int i, j;
         i = j = 0;
         int t1, t2, p1, p2;
 
         if (a1.getCuatrimestre() == a2.getCuatrimestre()) {
-            
+
             List<Hora> clases_1 = a1.getHorarioTeoria();
             List<Hora> clases_2 = a2.getHorarioTeoria();
-            
+
             List<Hora> practicas_1 = a1.getHorarioPractica();
             List<Hora> practicas_2 = a2.getHorarioPractica();
 
             p1 = practicas_1.size();
             p2 = practicas_2.size();
-            
-            t1= clases_1.size();
-            t2=clases_2.size();
-            
-            while(i<t1 && coincide){
-                while(j<p2 && coincide){
-                    
-                    coincide=coincidenHoras(clases_1.get(i), practicas_2.get(j));
-                    
+
+            t1 = clases_1.size();
+            t2 = clases_2.size();
+
+            while (i < t1 && coincide) {
+                while (j < p2 && coincide) {
+
+                    coincide = coincidenHoras(clases_1.get(i), practicas_2.get(j));
+
                 }
             }
-            
-            while(i<t1 && coincide){
-                while(j<p2 && coincide){
-                    
-                    coincide=coincidenHoras(clases_1.get(i), practicas_2.get(j));
-                    
+
+            while (i < t1 && coincide) {
+                while (j < p2 && coincide) {
+
+                    coincide = coincidenHoras(clases_1.get(i), practicas_2.get(j));
+
                 }
             }
-            
+
             return coincide;
         }
-        
+
         return coincide;
     }
 
@@ -274,38 +271,33 @@ public class Horarios {
     public void InsertarAsignatura() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduzca el nombre de la asignatura: ");
-        String nom = sc.next();
+        String nom = sc.nextLine();
         System.out.println("Introduzca el ID de la asignatura: ");
         int id = sc.nextInt();
-        System.out.println("Introduzca el numero de grupos de la asignatura: ");
-        int ng = sc.nextInt();
-        System.out.println("Introduzca el numero de dias que se impaarte la asignatura: ");
-        int nd = sc.nextInt();
+//        System.out.println("Introduzca el numero de grupos de la asignatura: ");
+//        int ng = sc.nextInt();
+        int ng = 1;
+//        System.out.println("Introduzca el numero de dias que se impaarte la asignatura: ");
+//        int nd = sc.nextInt();
+        int nd = 1;
         System.out.println("Introduzca el cuatrimestre de la asignatura: ");
         int c = sc.nextInt();
         System.out.println("Introduzca el curso de la asignatura: ");
         int cu = sc.nextInt();
 
-        String masDias="s";
-        String diaSemana, horaInicio, horaFin;
-        List<Hora> horarioTeoria = new ArrayList<>(); 
+        List<Hora> horarioTeoria = new ArrayList<>();
         List<Hora> horarioPractica = new ArrayList<>();
-        do{
-            Hora h1=new Hora();
-            System.out.println("Introduzca día de clase de la semana: (1-5)");
-            h1.setDia(Integer.parseInt(sc.nextLine()));
-            System.out.println("Introduzca hora de inicio: (HH:MM:SS)");
-            h1.setHInicio(LocalTime.parse(sc.nextLine()));
-            System.out.println("Introduzca hora de fin: (HH:MM:SS)");
-            h1.setHFin(LocalTime.parse(sc.nextLine()));
-            horarioTeoria.add(h1);
-            System.out.println("¿Desea introducir otro dia? (s/n)");
-            masDias=sc.nextLine();
-        }while(masDias=="s");
-        
-        //FALTA PEDIR HORARIO DE PRÁCTICAS
-        
-
+        Hora h1 = new Hora();
+        System.out.println("Introduzca día de la semana: (1-5)");
+        h1.setDia(sc.nextInt());
+        sc.nextLine();
+        System.out.println("Introduzca hora de inicio clase: (HH:MM:SS)");
+        String aux = sc.nextLine();
+        h1.setHInicio(LocalTime.parse(aux));
+        System.out.println("Introduzca hora de fin clase: (HH:MM:SS)");
+        h1.setHFin(LocalTime.parse(sc.nextLine()));
+        horarioTeoria.add(h1);
+        //FALTA PEDIR HORARIOS DE PRÁCTICAS
         Asignatura a = new Asignatura(nom, id, ng, c, cu, horarioTeoria, horarioPractica);
         asignaturas.add(a);
 
@@ -328,22 +320,22 @@ public class Horarios {
     }
 
     public void ModificarAsignatura() {
-        
+
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.println("Introduzca el ID de la asignatura a modificar: ");
-        int i=1;
-        boolean encontrado=false;
+        int i = 1;
+        boolean encontrado = false;
         int id = sc.nextInt();
 
         List<Hora> horarioteo = new ArrayList<Hora>();
 
-        while(i<=asignaturas.size() && !encontrado) {
-            
+        while (i <= asignaturas.size() && !encontrado) {
+
             if (asignaturas.get(i).getID() == id) {
-                
-                encontrado=true;
-                
+
+                encontrado = true;
+
                 System.out.println("Introduzca el nuevo nombre de la asignatura: curso y horario ");
                 String nom = sc.next();
                 System.out.println("Introduzca el curso en el que se impartira la asignatura: ");
@@ -362,11 +354,11 @@ public class Horarios {
                 asignaturas.get(i).setCurso(c);
                 asignaturas.get(i).setHorarioTeoria(horarioteo);
 
-            }else{
+            } else {
                 i++;
             }
-            
-            if(!encontrado){
+
+            if (!encontrado) {
                 System.out.println("No se encontró");
             }
 

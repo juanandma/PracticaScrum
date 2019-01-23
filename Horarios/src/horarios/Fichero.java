@@ -143,21 +143,21 @@ public class Fichero {
         return asignaturas;
     }
 
-    public static void main(String[] args) throws IOException {
-        List<Asignatura> asigs1 = new ArrayList<>();
-        List<Asignatura> asigs2 = new ArrayList<>();
-        List<Asignatura> asigs3 = new ArrayList<>();
-        asigs1 = leerFichero("horario4.txt");
-        asigs2 = leerFichero("horario2.txt");
-        asigs3 = leerFichero("horario1.txt");
-        for (int i = 0; i < asigs2.size(); i++) {
-            asigs1.add(asigs2.get(i));
-        }
-        for (int i = 0; i < asigs3.size(); i++) {
-            asigs1.add(asigs3.get(i));
-        }
-        Horarios h1 = new Horarios();
-        h1.VerAsignaturas(asigs1);
-    }
+//    public static void main(String[] args) throws IOException {
+//        List<Asignatura> asigs1 = new ArrayList<>();
+//        List<Asignatura> asigs2 = new ArrayList<>();
+//        List<Asignatura> asigs3 = new ArrayList<>();
+//        asigs1 = leerFichero("horario4.txt");
+//        asigs2 = leerFichero("horario2.txt");
+//        asigs3 = leerFichero("horario1.txt");
+//        for (int i = 0; i < asigs2.size(); i++) {
+//            asigs1.add(asigs2.get(i));
+//        }
+//        for (int i = 0; i < asigs3.size(); i++) {
+//            asigs1.add(asigs3.get(i));
+//        }
+//        Horarios h1 = new Horarios();
+//        h1.VerAsignaturas(asigs1);
+//    }
 
 }
