@@ -110,6 +110,8 @@ public class Horarios {
         return coincide;
     }
 
+    // Compara tanto el horario de prácticas
+    //de 2 asignaturas en busca de prácticas que coincidan a la misma hora
     private boolean coincidenAsignaturasPracticas(Asignatura a1, Asignatura a2) {
 
         boolean coincide = true;
@@ -118,12 +120,14 @@ public class Horarios {
         int n1, n2;
 
         if (a1.getCuatrimestre() == a2.getCuatrimestre()) {
-
+            
             List<Hora> practicas_1 = a1.getHorarioPractica();
             List<Hora> practicas_2 = a2.getHorarioPractica();
 
             n1 = practicas_1.size();
             n2 = practicas_2.size();
+            
+
 
             if (n1 == 0 || n2 == 0) {
                 coincide = false;
@@ -154,6 +158,50 @@ public class Horarios {
             coincide = false;
         }
 
+        return coincide;
+    }
+    
+    
+    private boolean coincidenAsignaturasTeoriaConPracticas(Asignatura a1, Asignatura a2){
+        
+        boolean coincide = true;
+        int i, j;
+        i = j = 0;
+        int t1, t2, p1, p2;
+
+        if (a1.getCuatrimestre() == a2.getCuatrimestre()) {
+            
+            List<Hora> clases_1 = a1.getHorarioTeoria();
+            List<Hora> clases_2 = a2.getHorarioTeoria();
+            
+            List<Hora> practicas_1 = a1.getHorarioPractica();
+            List<Hora> practicas_2 = a2.getHorarioPractica();
+
+            p1 = practicas_1.size();
+            p2 = practicas_2.size();
+            
+            t1= clases_1.size();
+            t2=clases_2.size();
+            
+            while(i<t1 && coincide){
+                while(j<p2 && coincide){
+                    
+                    coincide=coincidenHoras(clases_1.get(i), practicas_2.get(j));
+                    
+                }
+            }
+            
+            while(i<t1 && coincide){
+                while(j<p2 && coincide){
+                    
+                    coincide=coincidenHoras(clases_1.get(i), practicas_2.get(j));
+                    
+                }
+            }
+            
+            return coincide;
+        }
+        
         return coincide;
     }
 
@@ -280,14 +328,22 @@ public class Horarios {
     }
 
     public void ModificarAsignatura() {
+        
         Scanner sc = new Scanner(System.in);
+        
         System.out.println("Introduzca el ID de la asignatura a modificar: ");
+        int i=1;
+        boolean encontrado=false;
         int id = sc.nextInt();
 
         List<Hora> horarioteo = new ArrayList<Hora>();
 
-        for (int i = 0; i <= asignaturas.size(); i++) {
+        while(i<=asignaturas.size() && !encontrado) {
+            
             if (asignaturas.get(i).getID() == id) {
+                
+                encontrado=true;
+                
                 System.out.println("Introduzca el nuevo nombre de la asignatura: curso y horario ");
                 String nom = sc.next();
                 System.out.println("Introduzca el curso en el que se impartira la asignatura: ");
@@ -306,6 +362,12 @@ public class Horarios {
                 asignaturas.get(i).setCurso(c);
                 asignaturas.get(i).setHorarioTeoria(horarioteo);
 
+            }else{
+                i++;
+            }
+            
+            if(!encontrado){
+                System.out.println("No se encontró");
             }
 
         }
