@@ -26,7 +26,6 @@ public class Horarios {
      * @return
      */
    // private ArrayList<Asignatura> asignaturas = new ArrayList<Asignatura>();
-
     //Las busquedas son todas exhaustivas (malo)
     private boolean coincidenHoras(Hora h1, Hora h2) {
 
@@ -113,118 +112,117 @@ public class Horarios {
 
     /*private boolean coincidenAsignaturasPracticas(Asignatura a1, Asignatura a2) {
 
-        boolean coincide = true;
-        int i, j;
-        i = j = 0;
-        int n1, n2;
+     boolean coincide = true;
+     int i, j;
+     i = j = 0;
+     int n1, n2;
 
-        if (a1.getCuatrimestre() == a2.getCuatrimestre()) {
+     if (a1.getCuatrimestre() == a2.getCuatrimestre()) {
 
-            List<Hora> practicas_1 = a1.getHorarioPractica();
-            List<Hora> practicas_2 = a2.getHorarioPractica();
+     List<Hora> practicas_1 = a1.getHorarioPractica();
+     List<Hora> practicas_2 = a2.getHorarioPractica();
 
-            n1 = practicas_1.size();
-            n2 = practicas_2.size();
+     n1 = practicas_1.size();
+     n2 = practicas_2.size();
 
-            if (n1 == 0 || n2 == 0) {
-                coincide = false;
-            }
+     if (n1 == 0 || n2 == 0) {
+     coincide = false;
+     }
 
-            while (i < n1 && coincide) {
-                while (j < n2 && coincide) {
+     while (i < n1 && coincide) {
+     while (j < n2 && coincide) {
 
-                    int dia1 = practicas_1.get(i).getDia();
-                    int dia2 = practicas_2.get(j).getDia();
+     int dia1 = practicas_1.get(i).getDia();
+     int dia2 = practicas_2.get(j).getDia();
 
-                    if (dia1 == dia2) {
-                        coincide = coincidenHoras(practicas_1.get(i), practicas_2.get(j));
-                    } else {
-                        coincide = false;
-                    }
+     if (dia1 == dia2) {
+     coincide = coincidenHoras(practicas_1.get(i), practicas_2.get(j));
+     } else {
+     coincide = false;
+     }
 
-                    j++;
-                }
-                i++;
-            }
+     j++;
+     }
+     i++;
+     }
 
-            if (coincide) {
-                System.out.println("Coinciden: " + a1.getNombre() + " y " + a2.getNombre());
-            }
+     if (coincide) {
+     System.out.println("Coinciden: " + a1.getNombre() + " y " + a2.getNombre());
+     }
 
-        } else {
-            coincide = false;
-        }
+     } else {
+     coincide = false;
+     }
 
-        return coincide;
-    }
+     return coincide;
+     }
 
-    private boolean coincidenAsignaturasTeoriaConPracticas(Asignatura a1, Asignatura a2) {
+     private boolean coincidenAsignaturasTeoriaConPracticas(Asignatura a1, Asignatura a2) {
 
-        boolean coincide = true;
-        int i, j;
-        i = j = 0;
-        int t1, t2, p1, p2;
+     boolean coincide = true;
+     int i, j;
+     i = j = 0;
+     int t1, t2, p1, p2;
 
-        if (a1.getCuatrimestre() == a2.getCuatrimestre()) {
+     if (a1.getCuatrimestre() == a2.getCuatrimestre()) {
 
-            List<Hora> clases_1 = a1.getHorarioTeoria();
-            List<Hora> clases_2 = a2.getHorarioTeoria();
+     List<Hora> clases_1 = a1.getHorarioTeoria();
+     List<Hora> clases_2 = a2.getHorarioTeoria();
 
-            List<Hora> practicas_1 = a1.getHorarioPractica();
-            List<Hora> practicas_2 = a2.getHorarioPractica();
+     List<Hora> practicas_1 = a1.getHorarioPractica();
+     List<Hora> practicas_2 = a2.getHorarioPractica();
 
-            p1 = practicas_1.size();
-            p2 = practicas_2.size();
+     p1 = practicas_1.size();
+     p2 = practicas_2.size();
 
-            t1 = clases_1.size();
-            t2 = clases_2.size();
+     t1 = clases_1.size();
+     t2 = clases_2.size();
 
-            while (i < t1 && coincide) {
-                while (j < p2 && coincide) {
+     while (i < t1 && coincide) {
+     while (j < p2 && coincide) {
 
-                    coincide = coincidenHoras(clases_1.get(i), practicas_2.get(j));
+     coincide = coincidenHoras(clases_1.get(i), practicas_2.get(j));
 
-                }
-            }
+     }
+     }
 
-            while (i < t1 && coincide) {
-                while (j < p2 && coincide) {
+     while (i < t1 && coincide) {
+     while (j < p2 && coincide) {
 
-                    coincide = coincidenHoras(clases_1.get(i), practicas_2.get(j));
+     coincide = coincidenHoras(clases_1.get(i), practicas_2.get(j));
 
-                }
-            }
+     }
+     }
 
-            return coincide;
-        }
+     return coincide;
+     }
 
-        return coincide;
-    }
+     return coincide;
+     }
 
-    public boolean coincideHorarioPracticas(List<Asignatura> asignaturas) {
+     public boolean coincideHorarioPracticas(List<Asignatura> asignaturas) {
 
-        boolean coincide = false;
+     boolean coincide = false;
 
-        int i, j;
-        i = j = 0;
+     int i, j;
+     i = j = 0;
 
-        int n = asignaturas.size();
+     int n = asignaturas.size();
 
-        while (i < n && !coincide) {
-            while (j < n && !coincide) {
+     while (i < n && !coincide) {
+     while (j < n && !coincide) {
 
-                if (i != j) {
-                    coincide = coincidenAsignaturasPracticas(asignaturas.get(i), asignaturas.get(j));
-                }
+     if (i != j) {
+     coincide = coincidenAsignaturasPracticas(asignaturas.get(i), asignaturas.get(j));
+     }
 
-                j++;
-            }
-            i++;
-        }
+     j++;
+     }
+     i++;
+     }
 
-        return coincide;
-    }*/
-
+     return coincide;
+     }*/
     public void VerAsignaturas(List<Asignatura> asignaturas) {
         System.out.println("---- LISTA DE ASIGNATURAS ---");
         String dia;
@@ -309,7 +307,13 @@ public class Horarios {
         System.out.println("Introduzca el ID de la asignatura a eliminar: ");
         int id = sc.nextInt();
 
-        for (int i = 0; i <= asignaturas.size(); i++) {
+        for (int i = 0; i < asignaturas.size(); i++) {
+
+//            System.out.println("Nombre por teclado " + nom);
+//            System.out.println("ID por teclado " + id);
+//            System.out.println("Nombre del fichero " + asignaturas.get(i).getNombre());
+//            System.out.println("ID del fichero " + asignaturas.get(i).getID());
+
             if ((asignaturas.get(i).getNombre().equals(nom)) && (asignaturas.get(i).getID() == id)) {
                 asignaturas.remove(i);
             }
