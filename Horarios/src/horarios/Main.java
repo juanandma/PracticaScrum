@@ -78,6 +78,39 @@ public class Main {
             System.out.println("coinciden");
         }else System.out.println("no");
     }*/
+    private static void coincideHorario(List<Asignatura> asignaturas, Horarios horario){
+        
+        int id, salir;
+        Scanner input = new Scanner(System.in);
+        List<Asignatura> mis_clases = new ArrayList<>();
+         do {
+                            System.out.println("        *** " + '"' + "0" + '"' + " para terminar");
+                            System.out.println("Introduce el ID de la asignatura que quiere en su Horario: ");
+                            id = input.nextInt();
+
+                            if (id > 0 && id < asignaturas.size() + 1) {
+                                mis_clases.add(asignaturas.get(id - 1));
+                            }
+
+                        } while (id != 0);
+
+                        horario.VerAsignaturas(mis_clases);
+                        if (horario.coincideHorarioTeoria(mis_clases)) {
+                            System.out.println("Coincide su horario de teoría");
+
+                        } else {
+
+                            /*if (horario.coincideHorarioPracticas(mis_clases)) {
+                                System.out.println("Coincide su horario de práticas");
+
+                            } else {*/
+                                System.out.println("No coincide ninguna asignatura");
+
+                            //}
+                        }
+                        mis_clases.clear();
+    }
+    
     public static void main(String[] args) {
 
         Fichero fich = new Fichero();
@@ -85,9 +118,9 @@ public class Main {
         Horarios horario = new Horarios();
         Scanner input = new Scanner(System.in);
 
-        List<Asignatura> mis_clases = new ArrayList<>();
+        
 
-        int id, salir;
+        int salir;
 
         try {
 
@@ -128,31 +161,7 @@ public class Main {
                     break;
 
                     case 4: {
-                        do {
-                            System.out.println("        *** " + '"' + "0" + '"' + " para terminar");
-                            System.out.println("Introduce el ID de la asignatura que quiere en su Horario: ");
-                            id = input.nextInt();
-
-                            if (id > 0 && id < asignaturas.size() + 1) {
-                                mis_clases.add(asignaturas.get(id - 1));
-                            }
-
-                        } while (id != 0);
-
-                        horario.VerAsignaturas(mis_clases);
-                        if (horario.coincideHorarioTeoria(mis_clases)) {
-                            System.out.println("Coincide su horario de teoría");
-
-                        } else {
-
-                            /*if (horario.coincideHorarioPracticas(mis_clases)) {
-                                System.out.println("Coincide su horario de práticas");
-
-                            } else {*/
-                                System.out.println("No coincide ninguna asignatura");
-
-                            //}
-                        }
+                       coincideHorario(asignaturas,horario);
                     }
                     break;
 
